@@ -39,6 +39,10 @@ nav, p, section, article {
   padding: 8px;
 }
 
+.socialmedia a {
+    text-decoration: none;
+}
+
 .socialmedia img {
     width: 30px;
     height: auto;
