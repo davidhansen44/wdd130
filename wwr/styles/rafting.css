@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #b1f1b1; /* forest green */
+  --primary-color: #3cb93c; /* forest green */
   --secondary-color: #d38647; /* warm sand */
   --accent1-color: #1e3741; /* dark slate blue */
   --accent2-color: #c2a253; /* light golden yellow */
@@ -7,17 +7,12 @@
   --body-font: Arial, Helvetica, sans-serif;
 }
 
-
-header {
-    background-color: var(--primary-color);
-    color: var(--accent2-color);
-  }
-
-  * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body {
   font-family: var(--body-font);
@@ -25,32 +20,73 @@ body {
 }
 
 header, main, footer {
-  width: 840px;
+  max-width: 1200px;
   margin: 0 auto;
 }
+
+
+header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 20px;
+}
+
+
+header img {
+  width: 150px;
+}
+
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+
+nav a {
+  text-decoration: none;
+  color: var(--accent1-color);
+  padding: 10px;
+}
+
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
 
 h1, h2 {
   font-family: var(--heading-font);
   color: var(--accent1-color);
 }
 
-nav, p, section, article {
-  margin: 16px;
-  padding: 8px;
-}
-
-.socialmedia a {
-    text-decoration: none;
-}
-
-.socialmedia img {
-    width: 30px;
-    height: auto;
-}
 
 .hero {
   position: relative;
 }
+
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+.hero h1 {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  background-color: var(--accent1-color);
+  color: white;
+  opacity: 0.7;
+}
+
 
 .hero article {
   position: absolute;
@@ -62,26 +98,87 @@ nav, p, section, article {
   opacity: 0.9;
 }
 
+
 .hero article img {
   float: right;
   width: 125px;
   margin: 0 0 8px 8px;
 }
 
-.hero img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
 
 
-  h1 {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  padding: 16px;
+p, section, article {
+  margin: 16px;
+  padding: 8px;
+}
+
+
+
+/* HISTORY SECTION */
+section h2 {
   text-align: center;
-  opacity: 0.7;
-  background-color: var(--accent1-color);
-  color: #ffffff; /* white text – make sure there is enough contrast with the background-color */
-  }
+}
+
+
+.history-content {
+  display: grid;
+  grid-template-columns: 1fr 200px 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.history-content img {
+  width: 200px;
+}
+
+
+
+/* ADVENTURE SECTION */
+.adventures {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+figure {
+  text-align: center;
+}
+
+
+figure img {
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+}
+
+
+figcaption {
+  font-size: 14px;
+}
+
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 20px;
+}
+
+
+.socialmedia {
+  display: flex;
+  gap: 20px;
+}
+
+
+.socialmedia a {
+  text-decoration: none;
+}
+
+
+.socialmedia img {
+  width: 30px;
+  height: auto;
+}
